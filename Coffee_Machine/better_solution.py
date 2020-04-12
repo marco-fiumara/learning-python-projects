@@ -1,66 +1,92 @@
-class CoffeeMachine():
-    def __init__(self):
-        self.water = 400
-        self.milk = 540
-        self.beans = 120
-        self.cups = 9
-        self.money = 550
-        self.type_coffee = {'1': [250, 0, 16, 1, 4], '2': [
-            350, 75, 20, 1, 7], '3': [200, 100, 12, 1, 6]}
-        self.choice = 0
-        self.finished_products = []
+class CoffeeMachine:
+    menu = {
+        '1': [250, 0, 16, 4],
+        '2': [350, 75, 20, 7],
+        '3': [200, 100, 12, 6],
+    }
 
-    def remaining(self):
-        print('The coffee machine has:', str(self.water) + ' of water', str(self.milk) + ' of milk',
-              str(self.beans) + ' of coffee beans', str(self.cups) +
-              ' of disposable cups',
-              str(self.money) + ' of money', sep='\n')
+    def __init__(self, water=0, milk=0, coffee=0, cups=0, money=0):
+        self.active = True
+        self.water = water
+        self.milk = milk
+        self.coffee = coffee
+        self.cups = cups
+        self.money = money
+
+    def action(self):
+        try:
+            action = getattr(self, input(
+                'Write action (buy, fill, take, remaining, exit): '))
+            print()
+            action()
+        except AttributeError:
+            print('Unknown action')
 
     def buy(self):
-        self.choice = input(
-            'What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:')
-        if self.choice == 'back':
+        choices = '1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu'
+        choice = input(f'What do you want to buy? {choices}: ')
+        if choice not in ['1', '2', '3', 'back']:
+            print('Unknown variety of coffee')
             return
-        self.finished_products += [
-            'water'] if self.water < self.type_coffee[self.choice][0] else []
-        self.finished_products += [
-            'milk'] if self.milk < self.type_coffee[self.choice][1] else []
-        self.finished_products += [
-            'beans'] if self.beans < self.type_coffee[self.choice][2] else []
-        self.finished_products += [
-            'cups'] if self.cups < self.type_coffee[self.choice][3] else []
-        if len(self.finished_products) > 0:
-            print('Sorry, not enough ' + ', '.join(self.finished_products) + '!')
-            self.finished_products.clear()
-        else:
-            print('I have enough resources, making you a coffee!')
-            self.water -= self.type_coffee[self.choice][0]
-            self.milk -= self.type_coffee[self.choice][1]
-            self.beans -= self.type_coffee[self.choice][2]
-            self.cups -= self.type_coffee[self.choice][3]
-            self.money += self.type_coffee[self.choice][4]
+
+        if choice == 'back':
+            return
+
+        missing_resources = self.__calculate_missing_resources(
+            *CoffeeMachine.menu[choice][:-1])
+        if len(missing_resources) > 0:
+            print('Sorry, not enough %s!' % ''.join(missing_resources))
+            return
+
+        print('I have enough resources, making you a coffee!')
+
+        self.__recalculate_resources(*CoffeeMachine.menu[choice])
+
+    def __calculate_missing_resources(self, water, milk, coffee):
+        missing_resources = []
+
+        if self.water < water:
+            missing_resources.append('water')
+        if self.milk < milk:
+            missing_resources.append('milk')
+        if self.coffee < coffee:
+            missing_resources.append('coffee beans')
+        if self.cups == 0:
+            missing_resources.append('disposable cups')
+
+        return missing_resources
+
+    def __recalculate_resources(self, water, milk, coffee, money):
+        self.water -= water
+        self.milk -= milk
+        self.coffee -= coffee
+        self.cups -= 1
+        self.money += money
 
     def fill(self):
-        self.water += int(input('How many ml of water do you want to add:'))
-        self.milk += int(input('How many ml of milk do you want to add:'))
-        self.beans += int(input('How many grams of coffee beans do you want to add:'))
-        self.cups += int(input('How many disposable cups of coffee do you want to add:'))
+        self.water += int(input('Write how many ml of water the coffee machine has: '))
+        self.milk += int(input('Write how many ml of milk the coffee machine has: '))
+        self.coffee += int(input('Write how many grams of coffee beans the coffee machine has: '))
+        self.cups += int(input('Write how many disposable cups of coffee do you want to add: '))
 
     def take(self):
-        print('I gave you $' + str(self.money))
+        print(f'I gave you ${self.money}')
         self.money = 0
 
+    def remaining(self):
+        print('The coffee machine has:')
+        print(f'{self.water} of water')
+        print(f'{self.milk} of milk')
+        print(f'{self.coffee} of coffee beans')
+        print(f'{self.cups} of disposable cups')
+        print(f'{self.money} of money')
 
-Go = CoffeeMachine()
-while True:
-    Go.action = input('Write action (buy, fill, take, remaining, exit):')
-    if Go.action == 'buy':
-        Go.buy()
-    elif Go.action == 'fill':
-        Go.fill()
-    elif Go.action == 'take':
-        Go.take()
-    elif Go.action == 'remaining':
-        Go.remaining()
-    else:
-        break
+    def exit(self):
+        self.active = False
+
+
+machine = CoffeeMachine(400, 540, 120, 9, 550)
+
+while machine.active:
+    machine.action()
+    print()
