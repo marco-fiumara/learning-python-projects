@@ -6,6 +6,6 @@ The Tic-Tac-Toe activity helped to reinforce the basic concepts, such as:
 
 - list comprehension
 - nested lists
-- any
-- all
+- any()
+- all()
 - basic error handling (try, except)
