@@ -1,5 +1,4 @@
 Tim 350
 Jane 200
 Alex 400
-Marco 100
-MRCO 0
+Zara 700
