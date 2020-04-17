@@ -36,6 +36,7 @@ The following is an example interaction of a user using the program.
 
 (NOTE: The `>` you see is not included in the program, but indicates where the user has inputted information)
 
+```
 Which habitat # do you need? > 3
 
 Switching on camera from the habitat with a lovely goose...
@@ -66,3 +67,4 @@ WMMm\_\_,-'.' / _.\ F'''-+,, ;_,_.dMMMMMMMM[,_ / `=_}
 The lion is croaking!
 Which habitat # do you need? > exit
 See you!
+```
