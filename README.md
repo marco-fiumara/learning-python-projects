@@ -16,9 +16,9 @@ These are the projects I completed:
 - [Simple Chat Bot](https://github.com/marco-fiumara/learning-python-projects/tree/master/Simple_Chat_Bot)
 - [Hangman](https://github.com/marco-fiumara/learning-python-projects/tree/master/Hangman)
 - [Tic-Tac-Toe](https://github.com/marco-fiumara/learning-python-projects/tree/master/Tic-Tac-Toe)
-- [Coffee Machine](https://github.com/marco-fiumara/learning-python-projects/tree/master/Coffee_Machine)
 
 **Intermediate:**
 
+- [Coffee Machine](https://github.com/marco-fiumara/learning-python-projects/tree/master/Coffee_Machine)
 - [Rock-Paper-Scissors](https://github.com/marco-fiumara/learning-python-projects/tree/master/Rock-Paper-Scissors)
 - [Credit Calculator](https://github.com/marco-fiumara/learning-python-projects/tree/master/Credit%20Calculator)
