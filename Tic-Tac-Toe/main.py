@@ -35,7 +35,6 @@ def winner_check():
     for k in range(0, 3, 1):
         if "_" not in matrix[k]:
             total += 1
-            print(total)
             if total == 3:
                 print("Draw")
                 return "Draw"
