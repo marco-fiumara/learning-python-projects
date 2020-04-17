@@ -24,3 +24,43 @@ If you do not wish to utilise custom options, you can simply press `return`.
 The custom options must consist of an odd number, and will be put into a format where a selected option will loose to half the other options, and will beat the other half.
 
 An example of this can be found [here](https://i.stack.imgur.com/xgoX1.jpg)
+
+### Examples:
+
+**Example 1:**
+
+```
+Enter your name: > Tim
+Hello, Tim
+> rock,gun,lightning,devil,dragon,water,air,paper,sponge,wolf,tree,human,snake,scissors,fire
+Okay, let's start
+> rock
+Sorry, but computer chose air
+> !rating
+Your rating: 0
+> rock
+Well done. Computer chose sponge and failed
+> !rating
+Your rating: 100
+> !exit
+Bye!
+```
+
+**Example 2:**
+
+```
+Enter your name: > Tim
+Hello, Tim
+>
+Okay, let's start
+> rock
+Well done. Computer chose scissors and failed
+> paper
+Well done. Computer chose rock and failed
+> paper
+There is a draw (paper)
+> scissors
+Sorry, but computer chose rock
+> !exit
+Bye!
+```
