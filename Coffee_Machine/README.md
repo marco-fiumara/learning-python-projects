@@ -24,7 +24,7 @@ The program will let you execute a number of commands, all of which are outlined
 
 The following is an example interaction of a user using the program.
 
-(NOTE: The `>` you see is not included in the program, but indicates where the user has inputted information.)
+(NOTE: The `>` you see is not included in the program, but indicates where the user has inputted information)
 
 ```
 Write action (buy, fill, take, remaining, exit):
