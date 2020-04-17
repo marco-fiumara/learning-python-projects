@@ -39,32 +39,39 @@ The following is an example interaction of a user using the program.
 ```
 Which habitat # do you need? > 3
 
-Switching on camera from the habitat with a lovely goose...
+Switching on camera from habitat with lovely goose...
 
-_
-,-"" "".
-,' \_\_\_\_ `. ,' ,'`. `._
-(`. _..--.._ ,' ,' \ \ (`-.\ .-"" ""' / ( d _b
-(`._ `-"" ,._ (`-( \
- <_ `( <`< \ `-._\
- <`- (__< < : (__ (_<_< ;`------------------------------------------
-This bird stares intently at you... (Maybe it's time to change the channel?)
+                                    _
+                                ,-"" "".
+                              ,'  ____  `.
+                            ,'  ,'    `.  `._
+   (`.         _..--.._   ,'  ,'        \    \\
+  (`-.\    .-""        ""'   /          (  d _b
+ (`._  `-"" ,._             (            `-(   \\
+ <_  `     (  <`<            \              `-._\\
+  <`-       (__< <           :
+   (__        (_<_<          ;
+    `------------------------------------------
+This bird stares intently at you... (Maybe it's time to change the channel?)"""
 
 > Which habitat # do you need? > 1
 
-Switching on camera from the habitat with lions...
-,w.
-,YWMMw ,M ,
-_.---.._ **..---._.'MMMMMw,wMWmW,
-_.-"" ''' YP"WMMMMMMMMMb,
-.-' **.' .' MMMMW^WMMMM;
-_, .'.-'"; `, /` .--"" :MMM[==MWMW^;
-,mM^" ,-'.' / ; ; / , MMMMb_wMW" @\
-,MM:. .'.-' .' ; `\ ;`, MMMMMMMW `"=./`-,
-WMMm\_\_,-'.' / _.\ F'''-+,, ;_,_.dMMMMMMMM[,_ / `=_}
-"^MP**.-' ,-' \_.--"" `-, ; \ ; ;MMMMMMMMMMW^``; **|
-/ .' ; ; ) )`{ \`"^W^`, \ : / .' / ( .' / Ww._`. `" / Y,`, `-,=,_{ ; MMMP`""-, `-._.-, (--, )`,\_ / `) \/"") ^"`-, -;"\:
-The lion is croaking!
+Switching on camera from habitat with lions...
+                                               ,w.
+                                             ,YWMMw  ,M  ,
+                        _.---.._   __..---._.'MMMMMw,wMWmW,
+                   _.-""        '''           YP"WMMMMMMMMMb,
+                .-' __.'                   .'     MMMMW^WMMMM;
+    _,        .'.-'"; `,       /`     .--""      :MMM[==MWMW^;
+ ,mM^"     ,-'.'   /   ;      ;      /   ,       MMMMb_wMW"  @\\
+,MM:.    .'.-'   .'     ;     `\    ;     `,     MMMMMMMW `"=./`-,
+WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
+"^MP__.-'    ,-' _.--""   `-,   ;       \  ; ;MMMMMMMMMMW^``; __|
+           /   .'            ; ;         )  )`{  \ `"^W^`,   \  :
+          /  .'             /  (       .'  /     Ww._     `.  `"
+         /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
+        (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
+The lion is croaking!"""
 Which habitat # do you need? > exit
 See you!
 ```
