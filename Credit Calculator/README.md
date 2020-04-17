@@ -19,13 +19,10 @@ Open up terminal and enter the following command:
 There are rules however:
 
 1. all arguments must have `--` before them,
-2.
-
-..1. you must only choose one of either `diff` or `annuity`,
-..2. you must only choose two of `--principal`, `--periods` and `--payment`,
-..3. `--interest` must be included
-..4. therefore you should have a total of 4 arguments (The order you put them in does not matter)
-
+2. 1. you must only choose one of either `diff` or `annuity`,
+   2. you must only choose two of `--principal`, `--periods` and `--payment`,
+   3. `--interest` must be included
+   4. therefore you should have a total of 4 arguments (The order you put them in does not matter)
 3. no values can be negative,
 4. if you select `diff` as a type, you cannot also have `--payment`, as diff calculates differentiated payments for each period
 
