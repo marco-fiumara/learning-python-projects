@@ -27,6 +27,10 @@ An example of this can be found [here](https://i.stack.imgur.com/xgoX1.jpg)
 
 ### Examples:
 
+The following is an example interaction of a user using the program.
+
+(NOTE: The `>` you see is not included in the program, but indicates where the user has inputted information)
+
 **Example 1:**
 
 ```
