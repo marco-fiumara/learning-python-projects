@@ -30,7 +30,7 @@ Coordinates should be seperated by a space.
 
 Combinations work the same as normal tic-tac-toe, with three matching options in a row, column or diagonal.
 
-### Examples:
+### Example:
 
 The following is an example interaction of a user using the program.
 

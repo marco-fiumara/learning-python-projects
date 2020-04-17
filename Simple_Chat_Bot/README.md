@@ -16,7 +16,7 @@ Open up terminal and `cd` into the directory containing the 'Simple_Chat_Bot' fo
 
 The program will simulate having a conversation with you, asking for your name, and playing games with you such as: guessing your age and a quiz.
 
-### Examples:
+### Example:
 
 The following is an example interaction of a user using the program.
 
