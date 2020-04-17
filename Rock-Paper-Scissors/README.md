@@ -23,6 +23,4 @@ If you do not wish to utilise custom options, you can simply press `return`.
 
 The custom options must consist of an odd number, and will be put into a format where a selected option will loose to half the other options, and will beat the other half.
 
-An example of this is the following:
-
-[diagram]: https://i.stack.imgur.com/xgoX1.jpg "Complex options diagram"
+An example of this can be found [here](https://i.stack.imgur.com/xgoX1.jpg)
