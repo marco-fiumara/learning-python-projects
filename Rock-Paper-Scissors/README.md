@@ -25,4 +25,4 @@ The custom options must consist of an odd number, and will be put into a format 
 
 An example of this is the following:
 
-[diagram]: https://github.com/marco-fiumara/learning-python-projects/blob/master/Rock-Paper-Scissors/complex_options.jpg "Complex options diagram"
+[diagram]: complex_options.jpg "Complex options diagram"
