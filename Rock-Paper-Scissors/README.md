@@ -25,4 +25,4 @@ The custom options must consist of an odd number, and will be put into a format 
 
 An example of this is the following:
 
-[diagram]: complex_options.jpg "Complex options diagram"
+[diagram]: https://i.stack.imgur.com/xgoX1.jpg "Complex options diagram"
