@@ -22,3 +22,7 @@ The program will prompt you to enter your name, then after greeting you, will le
 If you do not wish to utilise custom options, you can simply press `return`.
 
 The custom options must consist of an odd number, and will be put into a format where a selected option will loose to half the other options, and will beat the other half.
+
+An example of this is the following:
+
+[diagram]: https://github.com/marco-fiumara/learning-python-projects/blob/master/Rock-Paper-Scissors/complex_options.jpg "Complex options diagram"
