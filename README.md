@@ -22,3 +22,7 @@ These are the projects I completed:
 - [Coffee Machine](https://github.com/marco-fiumara/learning-python-projects/tree/master/Coffee_Machine)
 - [Rock-Paper-Scissors](https://github.com/marco-fiumara/learning-python-projects/tree/master/Rock-Paper-Scissors)
 - [Credit Calculator](https://github.com/marco-fiumara/learning-python-projects/tree/master/Credit%20Calculator)
+
+**Hard:**
+
+- [Text-Based Browser](https://github.com/marco-fiumara/learning-python-projects/tree/master/Text-Based%20Browser)
