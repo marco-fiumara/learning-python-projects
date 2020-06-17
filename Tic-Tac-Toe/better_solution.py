@@ -5,7 +5,7 @@ step = 0
 def printgame():
     print('-' * 9)
     for i in range(3):
-        print("| {} {} {} |".format(a[0 + 3 * i], a[1 + 3 * i], a[2 + 3 * i]))
+        print(f"| {a[0 + 3 * i]} {a[1 + 3 * i]} {a[2 + 3 * i]} |")
     print('-' * 9)
 
 
