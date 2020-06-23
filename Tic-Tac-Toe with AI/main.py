@@ -66,7 +66,6 @@ class TicTacToe:
             self.compMove()
 
     def playerMove(self, coord_a, coord_b):
-
         self.cells[coord_a][coord_b] = "X" if self.character % 2 == 0 else "O"
         del self.avaliable_dict[(coord_a, coord_b)]
         self.turn = self.choice_y if self.character % 2 == 0 else self.choice_x
@@ -75,38 +74,118 @@ class TicTacToe:
         self.status()
 
     def compMove(self):
-        print('Making move level "easy"')
+        if self.turn == 'easy':
+            print('Making move level "easy"')
+            self.compAction(self.compMoveEasy())
+        elif self.turn == 'medium':
+            print('Making move level "medium"')
+            self.compAction(self.compMoveMedium())
+        elif self.turn == 'hard':
+            self.compMoveHard(0)
+
+    def compMoveEasy(self):
         move = random.choice(list(self.avaliable_dict.items()))
-        coords = TicTacToe.cell_dict[move[1]]
-        self.cells[coords[0]][coords[1]
-                              ] = "X" if self.character % 2 == 0 else "O"
-        del self.avaliable_dict[move[0]]
+        return TicTacToe.cell_dict[move[1]]
+
+    def compMoveMedium(self):
+        # Row check
+        row_number = -1
+        for row in self.cells:
+            row_number += 1
+            if row.count(" ") == 1 and (row.count('X') == 2 or row.count('O') == 2):
+                return [row_number, row.index(" ")]
+
+        # Column check
+        columns = [[(0, 0), (1, 0), (2, 0)], [
+            (0, 1), (1, 1), (2, 1)], [(0, 2), (1, 2), (2, 2)]]
+        for possibility in columns:
+            empty_count = 0
+            x_count = 0
+            o_count = 0
+            empty_index = None
+            for coordinate in possibility:
+                if self.cells[coordinate[0]][coordinate[1]] == 'X':
+                    x_count += 1
+                elif self.cells[coordinate[0]][coordinate[1]] == 'O':
+                    o_count += 1
+                elif self.cells[coordinate[0]][coordinate[1]] == " ":
+                    empty_count += 1
+                    empty_index = [coordinate[0], coordinate[1]]
+                if (x_count == 2 or o_count == 2) and empty_count == 1:
+                    return empty_index
+
+        # Diagonal check
+        diagonals = [[(0, 0), (1, 1), (2, 2)], [(0, 2), (1, 1), (2, 0)]]
+        for possibility in diagonals:
+            empty_count = 0
+            x_count = 0
+            o_count = 0
+            empty_index = None
+            for coordinate in possibility:
+                if self.cells[coordinate[0]][coordinate[1]] == 'X':
+                    x_count += 1
+                elif self.cells[coordinate[0]][coordinate[1]] == 'O':
+                    o_count += 1
+                elif self.cells[coordinate[0]][coordinate[1]] == " ":
+                    empty_count += 1
+                    empty_index = [coordinate[0], coordinate[1]]
+                if (x_count == 2 or o_count == 2) and empty_count == 1:
+                    return empty_index
+
+        return (self.compMoveEasy())
+
+    def compMoveHard(self, depth):
+        moves = list(self.avaliable_dict)
+        if len(moves) == 1:
+            return moves[0]
+        else:
+            self.cells[(moves[depth][0])(moves[depth][1])
+                       ] = "X" if self.character % 2 == 0 else "O"
+            if self.status() == ("X Wins" or "O Wins"):
+                del self.cells[(moves[depth][0])(moves[depth][1])]
+                self.compAction(moves[depth])
+            elif self.status() == ("Draw"):
+                del self.cells[(moves[depth][0])(moves[depth][1])]
+                self.compAction(moves[depth])
+            else:
+                self.compMoveHard(depth + 1)
+
+    def compAction(self, coordinates):
+        self.cells[coordinates[0]][coordinates[1]
+                                   ] = "X" if self.character % 2 == 0 else "O"
+        del self.avaliable_dict[(coordinates[0], coordinates[1])]
         self.turn = self.choice_y if self.character % 2 == 0 else self.choice_x
         self.character += 1
         self.output()
-        self.status()
+        result = self.status()
+        if result == "X Wins":
+            print("X wins")
+            print()
+            self.loop()
+        elif result == "O Wins":
+            print("O Wins")
+            print()
+            self.loop()
+        elif result == "Draw":
+            print("Draw")
+            print()
+            self.loop()
 
     def status(self):
         if any([all([x == "X" for x in self.cells[i]]) for i in range(3)]) \
                 or any([all([x == "X" for i in range(3) for x in self.cells[i][j]])for j in range(3)]) \
                 or all(x == "X" for i in range(3) for x in self.cells[i][i]) \
                 or all(x == "X" for i in range(3) for x in self.cells[i][2-i]):
-            print("X wins")
-            print()
-            self.loop()
+            return "X Wins"
         elif any([all([x == "O" for x in self.cells[i]]) for i in range(3)]) \
                 or any([all([x == "O" for i in range(3) for x in self.cells[i][j]])for j in range(3)]) \
                 or all(x == "O" for i in range(3) for x in self.cells[i][i]) \
                 or all(x == "O" for i in range(3) for x in self.cells[i][2-i]):
-            print("O wins")
-            print()
-            self.loop()
+            return "O Wins"
         elif any(" " in element for i in range(3) for element in self.cells[i]):
             return None
         else:
-            print("Draw")
-            print()
-            self.loop()
+            return "Draw"
 
     def exit_func(self):
         self.active = False
